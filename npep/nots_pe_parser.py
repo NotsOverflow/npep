@@ -1,3 +1,6 @@
+#!/usr/bin/env python2.7
+# -*- coding: utf-8 -*- 
+
 '''---------------------------------------------------------------------------|
                                                               _____           |
       Autor: Notsgnik                                       /||   /           |
@@ -7,8 +10,10 @@
       																		  |
 ---------------------------------------------------------------------------!'''
 
-npep
-====
+import peplib
 
-yet an other PE file parser
-
+def hello(filea):
+	#print "hello world!"
+	bb = peplib.BinaryBuffer({"location": filea})
+	bb.sayHello()
+	
