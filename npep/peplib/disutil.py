@@ -13,12 +13,15 @@
 from array import *
 
 from pestruct import *
+import string
+import random
+import binascii
 
 msgs = {
 	"0" : "type unandled by binary buffer",
 	"1" : "cannot open the file",
 	"2" : "buffer options are not valid",
-	"3" : "the struct suplied must be a dictionary",
+	"3" : "the struct suplied must be an OrderedDict",
 	"4" : "the option suplied is not supported",
 	"5" : "invalid PE File",
 	"6" : "invalid PE Optional Header Size",
@@ -44,8 +47,20 @@ def debug_msg(msg_nb, lvl = 1):
 	elif debug_lvl >= lvl:
 		print error
 
+def swapLeBe(string):
+	tmp = ""
+	for i in xrange(len(string),0,-2):
+		tmp = tmp + string[i-2:i]
+	return tmp
+	
+def hexIt(string):
+	return binascii.a2b_hex(string)
+
 def bleStrToHex(string):
 	return string[::-1].encode("hex")
 
 def bleStrToInt(string):
 	return int(bleStrToHex(string),16)
+
+def getRandomHex(size):
+	return "".join([random.choice("0123456789abcdef") for n in xrange(size)])
