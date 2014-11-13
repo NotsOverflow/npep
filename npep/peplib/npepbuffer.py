@@ -296,7 +296,7 @@ class BinaryBuffer():
 		self.dataToBuffer(seconddata,ps._IMAGE_NT_HEADERS_32p,"0")
 		pp.pprint(self.buffer)
 		#self.fillBuffer(4096-len(self.buffer),"rnd")
-		#self.writeBufferToFile("test.bin")
+		self.writeBufferToFile("test.bin")
 		'''
 		dh, offset =  self.fillStruct(ps._IMAGE_DOS_HEADER)
 		offset = int(self.get(dh,"e_lfanew"),16)
