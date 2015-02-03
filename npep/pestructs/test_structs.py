@@ -11,6 +11,23 @@
 ---------------------------------------------------------------------------!'''
 from collections import OrderedDict
 
+_somedata = [
+	("e_magic","5a4d"),
+	("e_lfanew", "00ffeeddccbbaa99887766"),
+	("_IMAGE_FILE_HEADER",[
+		("test","ab"),
+		("test2",[
+			("_name",[
+				("subnested2","1337")
+			])
+		])
+	])
+]
+_firstdata = [
+	("e_magic","5a4d"),
+	("e_lfanew", "00000040")
+]
+
 _TEST_STRUCTSMALL = [
 	("e_magic" , 2), # signature
 	("e_cblp" , 2), # bytes on last page of file
@@ -245,13 +262,13 @@ _IMAGE_EXPORT_DIRECTORY = {
 	"AdressOfNAmeOrdinals" : 4
 }
 
-_IMAGE_IMPORT_DESCRIPTOR = {
-	"Characteristics" : 4 , # Can point to originalFirstThunk
-	"TimeDateStamp" : 4,
-	"ForwarderChain" : 4,
-	"Name" : 4, # if bound to IAT has actual adresses
-	"FirstThunk" : 4,
-}
+_IMAGE_IMPORT_DESCRIPTOR = [
+	("Characteristics" , 4 ), # Can point to originalFirstThunk
+	("TimeDateStamp" , 4),
+	("ForwarderChain" , 4),
+	("Name" , 4), # if bound to IAT has actual adresses
+	("FirstThunk" , 4)
+]
 
 _IMAGE_RESOURCE_DIRECTORY = {
 	"Characteristics" : 4,

@@ -1,3 +1,6 @@
+#!/usr/bin/env python2.7
+# -*- coding: utf-8 -*- 
+
 '''---------------------------------------------------------------------------|
                                                               _____           |
       Autor: Notsgnik                                       /||   /           |
@@ -7,10 +10,5 @@
       																		  |
 ---------------------------------------------------------------------------!'''
 
-npep
-====
-
-yet an other PE file parser
-
-peTest.py somePe.exe to create one
-
+from test_structs import *
+from pe_struct import *
