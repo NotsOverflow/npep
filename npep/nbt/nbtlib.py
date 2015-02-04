@@ -390,14 +390,14 @@ class BinaryBuffer():
 		returned_string = ""
 		returned_size = 0
 		returned_elmemnt_numbers = 0
-
+		#pp.pprint(struct)
 		for elem in struct:
 			if type(elem[0]) is not str:
 				debug_msg("16",-1)
 			else:
 				if type(elem[1]) is int:
 					temp_value, nretSize, nretElem = self.resolvefillin(elem[1],int_filling_option,str_filling_option,str_filling_to_right)
-					temp_value, nretSize, nretElem = self.buildBufferString(temp_value,int_filling_option,str_filling_option,str_filling_to_right,littleEdian)
+					temp_value, nretSize, nretElem = self.buildBufferString([(elem[0],temp_value)],int_filling_option,str_filling_option,str_filling_to_right,littleEdian)
 					returned_size += nretSize
 					returned_elmemnt_numbers += nretElem
 					returned_string +=  copy.deepcopy(temp_value)
