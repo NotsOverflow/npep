@@ -21,8 +21,6 @@ import binascii
 
 
 def round_it_int(n, r):
-  result = n % r
-  result = r - ( r if result == 0 else result )
   result = n + round_it_gap(n,r)
   return result
 
